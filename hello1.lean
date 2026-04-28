@@ -12,3 +12,10 @@ def headOption (l : List Nat) : Option Nat :=
     match l with
     | [] => none
     | x :: _ => some x
+
+def listLength : List String -> Nat
+    | [] => 0
+    | x :: xs => 1 + listLength xs
+
+
+#eval listLength ["a", "b", "c"] -- should return 3
